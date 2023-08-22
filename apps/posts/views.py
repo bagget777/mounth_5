@@ -4,6 +4,7 @@ from django.views import generic
 from .models import *
 from django.views.generic import TemplateView
 
+
 class IndexView(generic.ListView):
     model = Post
     template_name = "index.html"
