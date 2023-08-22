@@ -18,6 +18,23 @@ class FAQView(TemplateView):
 class CoursesView(TemplateView):
     template_name = 'posts/courses.html'
 
+class BackendView(TemplateView):
+    template_name = 'courses/backend.html'
+
+class FrontendView(TemplateView):
+    template_name = 'courses/frontend.html'
+    
+class FullstackView(TemplateView):
+    template_name = 'courses/fullstack.html'
+    
+class AndroidView(TemplateView):
+    template_name = 'courses/android.html'
+    
+class IOSView(TemplateView):
+    template_name = 'courses/ios.html'
+
+class UXUIView(TemplateView):
+    template_name = 'courses/uxui.html'
 
 
 
