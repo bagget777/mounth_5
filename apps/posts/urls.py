@@ -1,4 +1,4 @@
-from .views import IndexView, AboutView, FAQView, CoursesView, BackendView, FrontendView, FullstackView, AndroidView, IOSView, UXUIView
+from .views import IndexView, AboutView, FAQView, CoursesView, BackendView, FrontendView, FullstackView, AndroidView, IOSView, UXUIView, enroll_view
 from django.urls import path
 
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path("android/", AndroidView.as_view(), name="android"),
     path("ios/", IOSView.as_view(), name="ios"),
     path("uxui/", UXUIView.as_view(), name="uxui"),
+    path('enroll/', enroll_view, name='enroll'),
 ]

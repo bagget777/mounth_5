@@ -1,8 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse, request
 from django.views import generic
 from .models import *
 from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
+from .forms import EnrollmentForm
+
+def enroll_view(request):
+    if request.method == 'POST':
+        form = EnrollmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('enroll_success')
+    else:
+        form = EnrollmentForm()
+    return render(request, 'courses/enroll.html', {'form': form})
 
 
 class IndexView(generic.ListView):
