@@ -1,34 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Post(models.Model):
-    title = models.CharField(
-        max_length=255,
-        verbose_name="Заголовка"
-    )
-    context = models.TextField(
-        verbose_name="Описаение"
-    )
-    created = models.DateTimeField(
-        auto_now=True,
-        verbose_name="Дата создание"
-    )
-    status = models.BooleanField(
-        default=True, 
-        verbose_name="Статус публикации"
-    )
-    cover = models.ImageField(
-        default="image.jpg", 
-        upload_to="uploads/posts", 
-        blank=True, 
-        verbose_name="Обложка"
-    )
-    
-    
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=100)  # Пример поля "status"
+
     def __str__(self):
         return self.title
-    
-    class Meta:
-        verbose_name = "Пост"
-        verbose_name_plural = "Посты"
+
+
         
         

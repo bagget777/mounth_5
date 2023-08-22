@@ -1,10 +1,8 @@
 from django.contrib import admin
-from apps.posts.models import Post
-
-# admin.site.register(Post)
+from .models import Post  # Используйте относительный импорт
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ["title", "created", "status"]
+    list_display = ["title", "created_at", "status"]  # Замените "created" на "created_at"
     list_filter = ["status"]
     list_editable = ["status"]
