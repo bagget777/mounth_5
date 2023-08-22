@@ -14,6 +14,9 @@ class AboutView(TemplateView):
     
 class FAQView(TemplateView):
     template_name = 'posts/faq.html'
+    
+class CoursesView(TemplateView):
+    template_name = 'posts/courses.html'
 
 
 
